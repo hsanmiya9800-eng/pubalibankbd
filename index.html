@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document Verifier - Pubali Bank PLC</title>
+    <title>Pubali Document Verifier System</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome -->
@@ -53,25 +53,27 @@
            EXACT GLASS EFFECT BUTTON (Same as image)
            ==================================================== */
         .glass-visit-btn {
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0.22) 0%, rgba(0, 0, 0, 0.15) 100%), #146c3e;
-            border: 2px solid #ffffff;
-            box-shadow: 0 0 0 2.5px #1c82e6, inset 0 1px 0 rgba(255, 255, 255, 0.3);
-            border-radius: 9999px;
-            color: #ffffff;
-            backdrop-filter: blur(4px);
-            -webkit-backdrop-filter: blur(4px);
-            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-        }
+    background-color: rgba(255, 255, 255, 0.12); /* Subtle transparent white */
+    border: 1px solid rgba(255, 255, 255, 0.25); /* Faint thin border */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Soft dark drop shadow */
+    border-radius: 9999px; /* Perfect pill shape */
+    color: #ffffff;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: all 0.3s ease;
+}
 
-        .glass-visit-btn:hover {
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0.32) 0%, rgba(0, 0, 0, 0.10) 100%), #177a46;
-            box-shadow: 0 0 0 3.5px #3898f7, 0 4px 14px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.5);
-            transform: scale(1.03);
-        }
+.glass-visit-btn:hover {
+    background-color: rgba(255, 255, 255, 0.22); /* Slightly brighter on hover */
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-1px);
+}
 
-        .glass-visit-btn:active {
-            transform: scale(0.98);
-        }
+.glass-visit-btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
     </style>
 </head>
 <body class="min-h-screen flex flex-col font-sans">
