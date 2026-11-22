@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pubali Document Verifier System</title>
+    <link rel="icon" type="image/png" sizes="180x180" href="favicon.png">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'pubali-green': '#0B6B3A',
+                        'pubali-green-dark': '#08542d',
+                        'pubali-light-green': '#e6f4ea',
+                        'pubali-text-green': '#008450',
+                        'page-bg': '#f0f4f2',
+                    },
+                    fontFamily: {
+                        sans: ['Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #f0f4f2;
+            color: #333;
+        }
+        .currency-symbol {
+            font-family: Arial, sans-serif;
+            margin-right: 1px;
+        }
+        
+        /* Header transition & hover */
+        .header-bar {
+            background-color: #0B6B3A;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .header-bar:hover {
+            background-color: #08542d;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        /* GLASS EFFECT BUTTON */
+        .glass-visit-btn {
+            background-color: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            border-radius: 9999px;
+            color: #ffffff;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            transition: all 0.3s ease;
+        }
+
+        .glass-visit-btn:hover {
+            background-color: rgba(255, 255, 255, 0.22);
+            border-color: rgba(255, 255, 255, 0.4);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+            transform: translateY(-1px);
+        }
+
+        .glass-visit-btn:active {
+            transform: translateY(1px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col font-sans">
+
+    <!-- ==================== HEADER ==================== -->
+    <header class="header-bar text-white shadow-sm sticky top-0 z-50">
+        <div class="px-4 py-2.5 md:px-8 md:py-3.5 flex justify-between items-center max-w-7xl mx-auto w-full">
+            
+            <!-- Left Side: Logo & Text -->
+            <div class="flex items-center gap-3 md:gap-4">
+                <img src="logo.png" 
+                     alt="Pubali Bank Logo" 
+                     class="h-9 sm:h-10 md:h-12 w-auto object-contain transition-transform duration-300 hover:scale-105">
+                
+                <div class="hidden md:block h-7 border-l border-white/40"></div>
+                <span class="hidden md:block text-sm md:text-base font-medium tracking-wide">Document Verifier</span>
+            </div>
+
+            <!-- Right Side: Visit Button -->
+            <a href="https://www.pubalibangla.com/" 
+               target="_blank" 
+               class="glass-visit-btn px-4 py-1.5 md:px-5 md:py-2 text-xs md:text-sm font-medium whitespace-nowrap leading-none flex items-center justify-center">
+                Visit Website
+            </a>
+        </div>
+    </header>
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <main class="flex-grow w-full max-w-3xl mx-auto px-3 sm:px-4 py-6 md:py-10">
+
+        <!-- Verification Badge -->
+        <div class="flex flex-col items-center mb-6 text-center">
+            <div class="bg-pubali-light-green border border-green-200 text-pubali-text-green px-4 py-1.5 sm:px-5 sm:py-2 rounded-full flex items-center gap-2 mb-3 shadow-sm">
+                <!-- Shield Check Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+                <span class="font-semibold text-sm sm:text-base">Valid Statement</span>
+            </div>
+            <p class="text-gray-500 text-xs sm:text-sm md:text-base max-w-md">
+                The following details are confirmed and digitally generated by Pubali Bank PLC.
+            </p>
+        </div>
+
+        <!-- DOCUMENT CARD (Exact Screenshot Match) -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-4 sm:p-6 md:p-8">
+            
+            <!-- Document Title -->
+            <h2 class="text-center text-base sm:text-lg md:text-xl font-bold text-gray-900 mb-6 sm:mb-8 uppercase underline underline-offset-4 decoration-2">
+                TO WHOM IT MAY CONCERN
+            </h2>
+
+            <!-- Info Header (Stacked Vertically) -->
+            <div class="space-y-3 sm:space-y-4 mb-5">
+                <div>
+                    <div class="text-[11px] sm:text-xs text-gray-400 font-medium uppercase tracking-wide">ACCOUNT HOLDER NAME:</div>
+                    <div class="text-sm sm:text-base font-bold text-gray-900 uppercase">Sobuj Biswas</div>
+                </div>
+                <div>
+                    <div class="text-[11px] sm:text-xs text-gray-400 font-medium uppercase tracking-wide">CERTIFICATE ID:</div>
+                    <div class="text-sm sm:text-base font-bold text-gray-900">31656154</div>
+                </div>
+                <div>
+                    <div class="text-[11px] sm:text-xs text-gray-400 font-medium uppercase tracking-wide">DATE:</div>
+                    <div class="text-sm sm:text-base font-bold text-gray-900">22-Nov-2026</div>
+                </div>
+            </div>
+
+            <!-- Divider Line -->
+            <hr class="border-gray-200 mb-4 sm:mb-6">
+
+            <!-- Fits Mobile Fully (No horizontal scrollbar) -->
+            <div class="w-full">
+                <table class="w-full border-collapse border border-gray-200 text-center text-[10px] xs:text-[11px] sm:text-xs md:text-sm">
+                    <thead>
+                        <tr class="bg-gray-50/50 text-gray-900 font-bold uppercase">
+                            <th class="border border-gray-200 px-1 py-2 sm:px-2 sm:py-3 w-[8%]">SL#</th>
+                            <th class="border border-gray-200 px-1 py-2 sm:px-2 sm:py-3 w-[30%]">A/C NUMBER</th>
+                            <th class="border border-gray-200 px-1 py-2 sm:px-2 sm:py-3 w-[22%]">OPEN DATE</th>
+                            <th class="border border-gray-200 px-1 py-2 sm:px-2 sm:py-3 w-[15%]">A/C TYPE</th>
+                            <th class="border border-gray-200 px-1 py-2 sm:px-2 sm:py-3 w-[25%]">BALANCE (BDT)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Data Row -->
+                        <tr>
+                            <td class="border border-gray-200 px-1 py-2 sm:px-2 sm:py-3 text-gray-800">1</td>
+                            <td class="border border-gray-200 px-1 py-2 sm:px-2 sm:py-3 text-gray-800 tracking-tighter sm:tracking-normal">4794101036021</td>
+                            <td class="border border-gray-200 px-1 py-2 sm:px-2 sm:py-3 text-gray-800">18-May-2026</td>
+                            <td class="border border-gray-200 px-1 py-2 sm:px-2 sm:py-3 text-gray-800 capitalize leading-tight">savings</td>
+                            <td class="border border-gray-200 px-1 py-2 sm:px-2 sm:py-3 text-right font-bold text-gray-900 whitespace-nowrap">
+                                <span class="currency-symbol">৳</span>15,07,751.15
+                            </td>
+                        </tr>
+                        <!-- Total Row -->
+                        <tr>
+                            <td colspan="4" class="border border-gray-200 px-2 py-2 sm:px-3 sm:py-3 text-right font-bold text-gray-900">
+                                Total
+                            </td>
+                            <td class="border border-gray-200 px-1 py-2 sm:px-2 sm:py-3 text-right font-bold text-pubali-text-green whitespace-nowrap">
+                                <span class="currency-symbol">৳</span>15,07,751.15
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="bg-white border-t border-gray-200 py-6 md:py-8 mt-auto">
+        <div class="max-w-4xl mx-auto px-4">
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-y-3.5 md:gap-x-10">
+                
+                <!-- Left Column -->
+                <div class="space-y-3">
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-phone text-pubali-text-green w-4 text-center text-sm"></i>
+                        <p class="text-gray-700 text-xs sm:text-sm">Helpline: +8809660616253, 16253</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-tty text-pubali-text-green w-4 text-center text-sm"></i>
+                        <p class="text-gray-700 text-xs sm:text-sm">PABX Number: +88 02223381614</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-print text-pubali-text-green w-4 text-center text-sm"></i>
+                        <p class="text-gray-700 text-xs sm:text-sm">Fax: 880-2-9564009</p>
+                    </div>
+                </div>
+
+                <!-- Right Column -->
+                <div class="space-y-3 mt-1 md:mt-0">
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-envelope text-pubali-text-green w-4 text-center text-sm"></i>
+                        <p class="text-gray-700 text-xs sm:text-sm">Mail: info@pubalibankbd.com</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <i class="fas fa-map-marker-alt text-pubali-text-green w-4 text-center text-sm mt-0.5"></i>
+                        <p class="text-gray-700 text-xs sm:text-sm leading-relaxed pr-2">
+                            Address: Head Office, 26 Dilkusha Commercial Area, Dhaka 1000, Bangladesh
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
